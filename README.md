@@ -50,14 +50,6 @@ A modern, fully-functional e-commerce website built with **MERN Stack** (MongoDB
 - **Font Awesome** - Icon library
 - **Webpack** - Module bundler
 
-### **Backend**
-- **Node.js** - Server runtime
-- **Express.js** - Web framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB object modeling
-- **JWT** - Authentication tokens
-- **bcryptjs** - Password hashing
-
 ## 📦 Installation
 
 ### **Quick Start (No Installation Required)**
@@ -66,38 +58,11 @@ A modern, fully-functional e-commerce website built with **MERN Stack** (MongoDB
 working-index.html
 ```
 
-### **Full MERN Stack Setup**
-
-1. **Clone the repository**
+### **Clone and Run**
 ```bash
 git clone https://github.com/Ansh-Srivastava-1425/Myntra-shopping-website.git
 cd Myntra-shopping-website
-```
-
-2. **Backend Setup**
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-3. **Frontend Setup**
-```bash
-cd frontend
-npm install
-npm start
-```
-
-4. **Database Setup**
-```bash
-# Seed sample products
-curl -X POST http://localhost:5000/api/products/seed
-```
-
-### **Automated Setup**
-```bash
-# Run this for automatic setup
-start-app.bat
+# Open working-index.html in your browser
 ```
 
 ## 🎮 Usage
@@ -123,38 +88,13 @@ start-app.bat
 
 ```
 myntra/
-├── 📄 working-index.html          # Standalone working version
+├── 📄 working-index.html          # Main working version
 ├── 📄 index.html                  # Original HTML file
 ├── 📄 style.css                   # Main stylesheet
 ├── 📄 script.js                   # GSAP animations
-├── 📁 backend/                    # Node.js backend
-│   ├── 📄 server.js              # Express server
-│   ├── 📁 models/                # MongoDB models
-│   ├── 📁 routes/                # API routes
-│   └── 📄 package.json           # Backend dependencies
-├── 📁 frontend/                   # React frontend
-│   ├── 📁 src/                   # React components
-│   ├── 📁 public/                # Static files
-│   └── 📄 package.json           # Frontend dependencies
+├── 📄 myntra.svg                  # Logo file
 └── 📄 README.md                  # This file
 ```
-
-## 🌐 API Endpoints
-
-### **Products**
-- `GET /api/products` - Get all products
-- `GET /api/products?category=MEN` - Filter by category
-- `POST /api/products/seed` - Create sample data
-
-### **Users**
-- `POST /api/users/register` - Register user
-- `POST /api/users/login` - Login user
-- `POST /api/users/cart/:productId` - Add to cart
-- `POST /api/users/wishlist/:productId` - Add to wishlist
-
-### **Search & Newsletter**
-- `GET /api/search?q=shirt` - Search products
-- `POST /api/newsletter/subscribe` - Subscribe to newsletter
 
 ## 🎨 Animation Features
 
