@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+    Navbar    
+-->
+    <div class="nav-iteam">
+      <img src="myntra.svg"
+      height="36px"
+      width="53px"
+       alt="Logo" />
+      <ul>
+        <li>MEN</li>
+        <li>WOMEN</li>
+        <li>KIDS</li>
+        <li>HOME</li>
+        <li>BEAUTY</li>
+        <li>GENZ</li>
+        <li>STUDIO <sup class="nav-sub-iteam">NEW</sup></li>
+      </ul>
+
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input placeholder="Search for products, brands and more" class="desktop-searchBar" value="">
+      </div>
+
+      <ul class="nav-profile">
+        <li>
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+        </li>
+
+         <li>
+        <i class="fa-regular fa-heart"></i>
+        <span>Wishlist</span>
+        </li>
+
+         <li>
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Bag</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Fashion Forward</h1>
+        <p class="hero-subtitle">Discover the latest trends in fashion</p>
+        <button class="cta-button">Shop Now</button>
+      </div>
+      <div class="hero-image">
+        <div class="floating-card card-1">50% OFF</div>
+        <div class="floating-card card-2">New Arrivals</div>
+        <div class="floating-card card-3">Free Shipping</div>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>Casual Wear</h3>
+          <p>₹1,999</p>
+        </div>
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>Formal Shirts</h3>
+          <p>₹2,499</p>
+        </div>
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>Accessories</h3>
+          <p>₹899</p>
+        </div>
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>Footwear</h3>
+          <p>₹3,999</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="10000">0</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Cities</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="99">0</div>
+          <div class="stat-label">Satisfaction %</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial active">
+          <p class="testimonial-text">"Amazing quality and fast delivery! Love shopping here."</p>
+          <div class="testimonial-author">- Sarah Johnson</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"Best fashion collection I've ever seen. Highly recommended!"</p>
+          <div class="testimonial-author">- Mike Chen</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"Excellent customer service and trendy designs."</p>
+          <div class="testimonial-author">- Emma Davis</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Get the latest fashion trends and exclusive offers delivered to your inbox</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Interactive Elements -->
+    <div class="parallax-bg"></div>
+    <div class="cursor-follower"></div>
+    <div class="loading-screen">
+      <div class="loading-text">MYNTRA</div>
+    </div>
+    
+    <!-- Morphing Shapes -->
+    <div class="morphing-shape shape-1"></div>
+    <div class="morphing-shape shape-2"></div>
+    <div class="morphing-shape shape-3"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

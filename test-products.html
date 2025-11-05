@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Products - Myntra</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .product { border: 1px solid #ddd; margin: 10px; padding: 15px; border-radius: 8px; }
+        .product img { width: 150px; height: 200px; object-fit: cover; }
+        .category { background: #ff3f6c; color: white; padding: 5px 10px; border-radius: 15px; font-size: 12px; }
+        .price { color: #ff3f6c; font-weight: bold; font-size: 18px; }
+        .rating { color: #ffa500; }
+        button { background: #ff3f6c; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #e63946; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Myntra Products Test Page</h1>
+    <p>This page tests the backend API and displays all products with images.</p>
+    
+    <div>
+        <button onclick="loadProducts('all')">All Products</button>
+        <button onclick="loadProducts('MEN')">Men</button>
+        <button onclick="loadProducts('WOMEN')">Women</button>
+        <button onclick="loadProducts('KIDS')">Kids</button>
+        <button onclick="loadProducts('HOME')">Home</button>
+        <button onclick="loadProducts('BEAUTY')">Beauty</button>
+        <button onclick="loadProducts('GENZ')">GenZ</button>
+        <button onclick="seedProducts()">Seed Products</button>
+    </div>
+    
+    <div id="products" class="grid"></div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        
+        async function seedProducts() {
+            try {
+                const response = await fetch(`${API_BASE}/products/seed`, { method: 'POST' });
+                const data = await response.json();
+                alert(`${data.message} - ${data.count} products created`);
+                loadProducts('all');
+            } catch (error) {
+                alert('Error seeding products. Make sure backend is running on port 5000');
+            }
+        }
+        
+        async function loadProducts(category = 'all') {
+            try {
+                const url = category === 'all' ? `${API_BASE}/products` : `${API_BASE}/products?category=${category}`;
+                const response = await fetch(url);
+                const products = await response.json();
+                
+                const container = document.getElementById('products');
+                container.innerHTML = products.map(product => `
+                    <div class="product">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/150x200?text=No+Image'">
+                        <h3>${product.name}</h3>
+                        <span class="category">${product.category}</span>
+                        <p>${product.description}</p>
+                        <div class="price">₹${product.price}</div>
+                        <div class="rating">⭐ ${product.rating} (${product.reviews} reviews)</div>
+                        <div>
+                            <button onclick="addToCart('${product._id}')">Add to Cart</button>
+                            <button onclick="addToWishlist('${product._id}')">❤️ Wishlist</button>
+                        </div>
+                    </div>
+                `).join('');
+                
+                document.querySelector('h1').textContent = `Myntra Products - ${category.toUpperCase()} (${products.length} items)`;
+            } catch (error) {
+                document.getElementById('products').innerHTML = '<p>Error loading products. Make sure backend is running on port 5000</p>';
+            }
+        }
+        
+        function addToCart(productId) {
+            alert(`Product ${productId} added to cart! (Demo)`);
+        }
+        
+        function addToWishlist(productId) {
+            alert(`Product ${productId} added to wishlist! (Demo)`);
+        }
+        
+        // Load all products on page load
+        loadProducts('all');
+    </script>
+</body>
+</html>
